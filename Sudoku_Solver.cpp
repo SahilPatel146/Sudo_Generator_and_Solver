@@ -239,8 +239,13 @@ int main(int, char **)
     int puzzle[PUZZLE_SIZE][PUZZLE_SIZE];
     int origin[PUZZLE_SIZE][PUZZLE_SIZE];
     int diff;
-    cout << "Enter Difficulty Level Between 1 to 5";
+    cout << "Enter Difficulty Level Between 1 to 5: ";
     cin >> diff;
+    if (diff > 5 || diff < 1)
+    {
+        cout << "Enter Difficulty Level In Between Between 1 to 5 Only!";
+        return 0;
+    }
     generatePuzzle(puzzle, diff);
     copyPuzzle(puzzle, origin);
     system("cls");
